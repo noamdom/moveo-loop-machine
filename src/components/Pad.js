@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from 'react';
 import {  Card } from 'react-bootstrap';
 import { CgToggleSquare, CgToggleSquareOff } from 'react-icons/cg';
 import { GoMute, GoUnmute } from 'react-icons/go';
-const path = require('path');
 
 
 export default function Pad({ title, playingState, handleOnTimeUpdate, time }) {
