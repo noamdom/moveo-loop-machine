@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
-import { Button } from 'react-bootstrap'
+import React, { useState , useEffect } from 'react';
+import { Card, Button } from 'react-bootstrap'
+import { FaPlay, FaPause } from 'react-icons/fa';
+
 
 
 import Pad from './Pad.js'
@@ -11,6 +13,7 @@ const AudioBoard = () => {
 
 
 
+    // const tracks = ['120_future_funk_beats_25.mp3'];
     const tracks = [
         '120_future_funk_beats_25.mp3',
         '120_stutter_breakbeats_16.mp3',
@@ -23,6 +26,8 @@ const AudioBoard = () => {
         'SilentStar_120_Em_OrganSynth.mp3'
     ];
 
+
+  
     const handleOnClick = () => {
         setPlayingState(!playingState);
     }
@@ -36,26 +41,34 @@ const AudioBoard = () => {
 
     return (
         <div>
-
-
-            <h1>AudioBoard</h1>
             <div>
                 {tracks.map((track, idx) => {
                     return (
-                        <Pad key={idx} 
-                            title={track} 
-                            playingState={playingState} 
-                            handleOnTimeUpdate = {handleOnTimeUpdate}
-                            time = {time}
-                            
-                            />
+                        <Pad key={idx}
+                            title={track}
+                            playingState={playingState}
+                            handleOnTimeUpdate={handleOnTimeUpdate}
+                            time={time}
+
+                        />
                     )
                 })
 
                 }
             </div>
             <div className='text-center'>
-                <Button variant={playingState ? "danger" : "success"} className="mx-1" onClick={handleOnClick}>{playingState ? "Pause" : "Play"}</Button>
+                <Card
+                    bg={"light"}
+                    text={"dark"}
+                    style={{ width: '90%' }}
+                    className="mx-auto my-2 text-center"
+                    onClick={handleOnClick}
+                >
+                    <Card.Body className="text-center">
+                        <Button variant={"light"} className="mx-2 rounded-circle" onClick={handleOnClick}>{playingState ? <FaPause className="ml=2" /> : <FaPlay className="ml=2" />}</Button>
+                        <span className="lead ">Hit the button to play/stop the music </span>
+                    </Card.Body>
+                </Card>
             </div>
         </div>
     );

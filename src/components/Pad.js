@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Button } from 'react-bootstrap'
-import { Card } from 'react-bootstrap';
-
+import { Button, Card } from 'react-bootstrap';
+import { CgToggleSquare, CgToggleSquareOff } from 'react-icons/cg';
+import { GoMute, GoUnmute } from 'react-icons/go';
 const path = require('path');
 
 
@@ -11,23 +11,17 @@ export default function Pad({ title, playingState, handleOnTimeUpdate, time }) {
     const audioRef = useRef(null);
 
 
-
-
-
     useEffect(() => {
-        if (playingState && padState && time === 0) {
+        if (playingState && padState ) {
             audioRef.current.play();
-        } else if (playingState && padState && time > 0.0) {
-            setTimeout(() => audioRef.current.play(), time * 1000);
-        } else {
+        }  else {
             audioRef.current.pause();
         }
 
-    }, [playingState, padState, time]);
+    }, [playingState, padState]);
 
 
     const handleOnClick = () => {
-        console.log(audioRef.current.duration);
         setPadState(!padState);
     }
 
@@ -47,26 +41,28 @@ export default function Pad({ title, playingState, handleOnTimeUpdate, time }) {
 
     return (
         <Card
-            bg={'primary'}
-            text={'white'}
-            style={{ width: '80%' }}
-            className="mx-auto my-2 text-center"
+            bg={padState ? "info" : "light"}
+            text={padState ? "white" : "dark"}
+            style={{ width: '90%' }}
+            className="mx-auto my-1 text-center"
+            onClick={handleOnClick}
         >
-            <Card.Body className="row justify-content-between mx-1">
-                <audio src={`/assets/${title}`}
-                    ref={audioRef}
-                    // onEnded ={handleOnEnded} 
-                    onTimeUpdate={() => handleOnTimeUpdate(audioRef.current.currentTime)}
-                    loop
-                // controls
+            <Card.Body className="row justify-md-content-between justify-lg-content-between justify-content-sm-center mx-1">
+                <div>
 
-                />
-                <Card.Text className='my-auto'>
-                    {title}
-                </Card.Text>
-                <Button variant={padState ? "danger" : "success"} className="mx-1" onClick={handleOnClick}>{padState ? "off" : "on"}</Button>
-
-
+                    <audio src={`/assets/${title}`}
+                        ref={audioRef}
+                        // onEnded ={handleOnEnded} 
+                        onTimeUpdate={() => handleOnTimeUpdate(audioRef.current.currentTime)}
+                        // loop
+                    // controls
+                    />
+                    <Card.Text className='my-auto'>
+                        <span className="my-auto mr-3">{playingState ? <GoUnmute /> : <GoMute />}</span>
+                        {title}
+                    </Card.Text>
+                </div>
+                    <div  className="mx-1 ml-auto" >{padState ? <CgToggleSquareOff  /> : <CgToggleSquare />}</div>
 
             </Card.Body>
 
