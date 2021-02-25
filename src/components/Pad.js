@@ -1,12 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Button, Card } from 'react-bootstrap';
+import {  Card } from 'react-bootstrap';
 import { CgToggleSquare, CgToggleSquareOff } from 'react-icons/cg';
 import { GoMute, GoUnmute } from 'react-icons/go';
 const path = require('path');
 
 
 export default function Pad({ title, playingState, handleOnTimeUpdate, time }) {
-    const trackPath = path.join('assets', title);
     const [padState, setPadState] = useState(false)
     const audioRef = useRef(null);
 
