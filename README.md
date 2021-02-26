@@ -1,5 +1,5 @@
 # Description
-* This project is part of home task from Moveo
+* This project is part of home task in Moveo.
 * THe project inculde:
     * Loop machine - which playing tracks in loops by user control.
     * Reocred Option.
