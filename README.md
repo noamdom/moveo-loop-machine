@@ -11,7 +11,7 @@ The project components:
 * Header.js - The screen's head panel , conatian the project title and auther name.
 * AudioBoard - The main part of this task, it holds the 9 pads, and the play/pause controlres.
 * Pad.js - A single pad component. It conatin the pad's track and state.
-* UserRecoder - Manage the recording option.
+* UserRecoder.js - Manage the recording option.
 
 ## synchronization description:
 * AudioBoard components has 'isPlaying' state field - which switches state, on click.
