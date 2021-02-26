@@ -20,18 +20,17 @@ The project components:
 * In the case of AudioBoard in 'Play' mode and Pad in 'On' mode, the pad's audio starts playing the track.
 * At the same time, AudioBoard starts timeout which counts the loop number.
 * The main synchronization idea, based on the react hooks - useEffect - principal which renders the audio.play() by each update in 'loopNum' (as part of the dependency array).
-* If we click on a Pad in the middle of the loop it updates the padLoop to be numLoop and at the next loop while we check if padloop == Numloop, the answer will yes, and then we render audio.play() and join this Pad to all active Pads.
+* If we click on a Pad in the middle of the loop it updates the padLoop to be numLoop and at the next loop while we check if padloop == Numloop, the answer will be yes, and then we render audio.play() and join this Pad to all active Pads.
 
 
-# libraries
+# Libraries
 * react-bootrstrap
-* bootsrap
+* react-record
+* react-icons
 
 
 ### Refernces
 * https://dev.to/ma5ly/lets-make-a-little-audio-player-in-react-p4p
-* https://reactjsexample.com/a-react-component-with-render-prop-that-can-be-used-to-record-audio-video/
-
-
+* https://www.npmjs.com/package/react-record
 
 
