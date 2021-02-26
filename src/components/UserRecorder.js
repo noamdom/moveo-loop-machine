@@ -4,7 +4,7 @@ import { Card, Button } from 'react-bootstrap'
 import { RiRecordCircleFill } from 'react-icons/ri';
 
 
-const UserRecoder = ({ props }) => {
+const UserRecorder = ({ props }) => {
     const [bloblURL, setBloblURL] = useState(null);
     const [isRecording, setIsRecording] = useState(false)
 
@@ -70,4 +70,4 @@ const UserRecoder = ({ props }) => {
 }
 
 
-export default UserRecoder;
+export default UserRecorder;

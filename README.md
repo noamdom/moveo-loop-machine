@@ -3,14 +3,15 @@
 * THe project inculde:
     * Loop machine - which playing tracks in loops by user control.
     * Reocred Option.
-* The project deployed to Netlify and you can find it [here:]('https://pedantic-easley-96a02f.netlify.app/').
+* The project deployed to Netlify and you can find it [here:](https://pedantic-easley-96a02f.netlify.app/).
 
 # Design:
-This project conatin 5 components:
-*  App.js - The Main component which hold the whole application
-* Header.js - The screen's head panel , conatian the project title, auther numae
-* AudioBoard - The main part of this task, it holds the 9 pads, and the play/pause controlres
-* Pad.js - A single pad compnenet. It conatin the pad's track and state
+The project components:
+*  App.js - The Main component which hold the whole application.
+* Header.js - The screen's head panel , conatian the project title and auther name.
+* AudioBoard - The main part of this task, it holds the 9 pads, and the play/pause controlres.
+* Pad.js - A single pad component. It conatin the pad's track and state.
+* UserRecoder - Manage the recording option.
 
 ## synchronization description:
 * AudioBoard components has 'isPlaying' state field - which switches state, on click.

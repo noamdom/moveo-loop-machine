@@ -1,6 +1,6 @@
 import Header from './components/Header';
 import AudioBoard from './components/AudioBoard';
-import UserRecoder from './components/UserRecoder';
+import UserRecorder from './components/UserRecorder';
 import { Container } from 'react-bootstrap'
 
 
@@ -16,7 +16,7 @@ const App = () => {
                 <AudioBoard />
             </Container>
             <Container fluid>
-                <UserRecoder />
+                <UserRecorder />
             </Container>
 
         </div>
