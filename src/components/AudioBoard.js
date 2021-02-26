@@ -1,43 +1,52 @@
-import React, { useState  } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Card, Button } from 'react-bootstrap'
 import { FaPlay, FaPause } from 'react-icons/fa';
 
-
-
 import Pad from './Pad.js'
 
+const tracks = [
+    '120_future_funk_beats_25.mp3',
+    '120_stutter_breakbeats_16.mp3',
+    'Bass Warwick heavy funk groove on E 120 BPM.mp3',
+    'electric guitar coutry slide 120bpm - B.mp3',
+    'FUD_120_StompySlosh.mp3',
+    'GrooveB_120bpm_Tanggu.mp3',
+    'MazePolitics_120_Perc.mp3',
+    'PAS3GROOVE1.03B.mp3',
+    'SilentStar_120_Em_OrganSynth.mp3'
+];
+
+const LOOP_TIME = 10000 // 10000ms = 10s
+
 const AudioBoard = () => {
-    const globalTime = 8.045688
     const [playingState, setPlayingState] = useState(false);
-    const [time, setTime] = useState(0);
+    const [loopNum, setLoopNum] = useState(0);
+    const [playingCounter, setPlayingCounter] = useState(0);
+
+    
+    useEffect(() => {
+        let timer;
+        if (playingState) {
+            timer = setTimeout(() => {
+                setLoopNum(loopNum + 1);
+            }, LOOP_TIME);
+            return () => {
+                clearInterval(timer)
+            };
+        } else {
+            return () => clearTimeout(timer);
+        }
+    }, [playingState, loopNum]);
 
 
-
-    // const tracks = ['120_future_funk_beats_25.mp3'];
-    const tracks = [
-        '120_future_funk_beats_25.mp3',
-        '120_stutter_breakbeats_16.mp3',
-        'Bass Warwick heavy funk groove on E 120 BPM.mp3',
-        'electric guitar coutry slide 120bpm - B.mp3',
-        'FUD_120_StompySlosh.mp3',
-        'GrooveB_120bpm_Tanggu.mp3',
-        'MazePolitics_120_Perc.mp3',
-        'PAS3GROOVE1.03B.mp3',
-        'SilentStar_120_Em_OrganSynth.mp3'
-    ];
-
-
-  
     const handleOnClick = () => {
         setPlayingState(!playingState);
+        if (!playingState) setLoopNum(0);
     }
 
-
-    const handleOnTimeUpdate = (currentTime) => {
-        setTime(globalTime - currentTime)
-        // console.log(time);
+    const handlePlayingCounter = (update) => {
+        setPlayingCounter(playingCounter + update);
     }
-
 
     return (
         <div>
@@ -47,9 +56,8 @@ const AudioBoard = () => {
                         <Pad key={idx}
                             title={track}
                             playingState={playingState}
-                            handleOnTimeUpdate={handleOnTimeUpdate}
-                            time={time}
-
+                            loopNum={loopNum}
+                            handlePlayingCounter={handlePlayingCounter}
                         />
                     )
                 })

@@ -19,7 +19,6 @@ const UserRecoder = ({ props }) => {
 
 
     const onStop = (blobObject) => {
-        console.log('blobObject is: ', blobObject);
         setBloblURL(blobObject.blobURL);
     }
 
