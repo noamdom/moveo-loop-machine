@@ -13,7 +13,7 @@ The project components:
 * Pad.js - A single pad component. It conatin the pad's track and state.
 * UserRecoder.js - Manage the recording option.
 
-## synchronization description
+## Synchronization Description
 * AudioBoard components has 'isPlaying' state field - which switches state, on click.
 * Pad has isPlaying (setPadState) state field too - which switch mode by clicking on the Pad.
 * In addition, Pad has a PrevLoop field - to determine if the pad is part of the active pads.
