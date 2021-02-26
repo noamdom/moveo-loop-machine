@@ -4,6 +4,7 @@ import { FaPlay, FaPause } from 'react-icons/fa';
 
 import Pad from './Pad.js'
 
+// all the 9 tracks name
 const tracks = [
     '120_future_funk_beats_25.mp3',
     '120_stutter_breakbeats_16.mp3',
@@ -21,9 +22,8 @@ const LOOP_TIME = 10000 // 10000ms = 10s
 const AudioBoard = () => {
     const [playingState, setPlayingState] = useState(false);
     const [loopNum, setLoopNum] = useState(0);
-    const [playingCounter, setPlayingCounter] = useState(0);
-
     
+    // this function setTimeout for  loopCount trigger by loopNum & playingState updates
     useEffect(() => {
         let timer;
         if (playingState) {
@@ -40,13 +40,13 @@ const AudioBoard = () => {
 
 
     const handleOnClick = () => {
+        // turn off the machine
         setPlayingState(!playingState);
+        // if the machine turn off - restart loop counting
         if (!playingState) setLoopNum(0);
     }
 
-    const handlePlayingCounter = (update) => {
-        setPlayingCounter(playingCounter + update);
-    }
+  
 
     return (
         <div>
@@ -57,7 +57,6 @@ const AudioBoard = () => {
                             title={track}
                             playingState={playingState}
                             loopNum={loopNum}
-                            handlePlayingCounter={handlePlayingCounter}
                         />
                     )
                 })

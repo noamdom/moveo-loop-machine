@@ -12,12 +12,14 @@ export default function Pad({ title, playingState, loopNum }) {
     const [prevLoop, setPrevLoop] = useState(INIT_PAD);
     const [audio, setaudio] = useState(new Audio(`/assets/${title}`));
 
+    // This function playing the track trigger by loopNum & playingState updates
     useEffect(() => {
+        // playing when the machine and pad active and the loop counter is match to active pad.
         if (playingState && padState && prevLoop >= loopNum - 1) {
             setPrevLoop(loopNum);
             audio.play();
         } else {
-            audio.currentTime = 0;
+            audio.currentTime = 0; // resart the track
             audio.pause();
         }
 
@@ -33,7 +35,7 @@ export default function Pad({ title, playingState, loopNum }) {
             audio.pause();
             setPrevLoop(INIT_PAD);
         } else {
-            // turn on
+            // turn on and join the pad to the active pads
             setPrevLoop(loopNum)
         }
         setPadState(!padState);

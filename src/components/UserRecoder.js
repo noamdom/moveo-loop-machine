@@ -10,15 +10,18 @@ const UserRecoder = ({ props }) => {
 
 
     const startRecording = () => {
+        // switch mode will start ReactRecord 
         setIsRecording(true);
     }
 
     const stopRecording = () => {
+        // switch mode will stop ReactRecord 
         setIsRecording(false);
     }
 
 
     const onStop = (blobObject) => {
+        // save the record
         setBloblURL(blobObject.blobURL);
     }
 

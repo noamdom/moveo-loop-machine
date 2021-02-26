@@ -18,6 +18,11 @@ const Header = () => {
                         Moveo - Loop Machine
                         </span>
                 </Navbar.Brand>
+                <Navbar.Brand href="#">
+                    <span className="my-0">
+                        Noam Domovich
+                        </span>
+                </Navbar.Brand>
             </Container>
         </Navbar>
     );
