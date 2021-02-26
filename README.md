@@ -5,7 +5,7 @@
     * Reocred Option.
 * The project deployed to Netlify and you can find it [here](https://pedantic-easley-96a02f.netlify.app/).
 
-# Design:
+# Design
 The project components:
 *  App.js - The Main component which hold the whole application.
 * Header.js - The screen's head panel , conatian the project title and auther name.
@@ -13,7 +13,7 @@ The project components:
 * Pad.js - A single pad component. It conatin the pad's track and state.
 * UserRecoder.js - Manage the recording option.
 
-## synchronization description:
+## synchronization description
 * AudioBoard components has 'isPlaying' state field - which switches state, on click.
 * Pad has isPlaying (setPadState) state field too - which switch mode by clicking on the Pad.
 * In addition, Pad has a PrevLoop field - to determine if the pad is part of the active pads.
