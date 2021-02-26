@@ -3,7 +3,7 @@
 * THe project inculde:
     * Loop machine - which playing tracks in loops by user control.
     * Reocred Option.
-* The project deployed to Netlify and you can find it [here:](https://pedantic-easley-96a02f.netlify.app/).
+* The project deployed to Netlify and you can find it [here](https://pedantic-easley-96a02f.netlify.app/).
 
 # Design:
 The project components:
