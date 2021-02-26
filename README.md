@@ -29,8 +29,10 @@ The project components:
 * react-icons
 
 
-### Refernces
+### References
 * https://dev.to/ma5ly/lets-make-a-little-audio-player-in-react-p4p
 * https://www.npmjs.com/package/react-record
+* Moveo Logo - https://jobplanner.co.il/en/company/10/Moveo
+
 
 
