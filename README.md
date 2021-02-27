@@ -9,7 +9,7 @@
 The project components:
 * App.js - The Main component which holds the whole application.
 * Header.js - The screen's head panel, conatians the project title and auther name.
-* AudioBoard - The main part of this task, it holds the 9 pads, and the play/pause controlres.
+* AudioBoard - The main part of this task, it holds the 9 pads, and the play/pause controllers.
 * Pad.js - A single pad component. It conatins the pad's track and state.
 * UserRecoder.js - Manages the recording option.
 
