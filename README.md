@@ -19,7 +19,7 @@ The project components:
 * In addition, Pad has a 'PrevLoop' field. It determines if the pad is part of the active pads.
 * In case of AudioBoard in 'Play' mode and Pad in 'On' mode, the pad's audio starts playing the track.
 * At the same time, AudioBoard starts timeout which counts the loop number.
-* The main synchronization idea, based on the react hooks - useEffect - principal which renders the audio.play() by each update in 'loopNum' (as part of the dependency array).
+* The main synchronization idea, based on the react hooks - useEffect - principal which renders the audio.play() by each updatee in 'loopNum' (as part of the dependency array).
 * If we click on a Pad in the middle of the loop it updates the 'PrevLoop' to be numLoop and at the next loop while we check if padloop == Numloop, the answer will be yes, and then we render audio.play() and join this Pad to all active Pads.
 
 
