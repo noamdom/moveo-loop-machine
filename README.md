@@ -1,26 +1,23 @@
 # Description
-* This project is part of home task in Moveo.
-* The project includes:
-    * Loop machine - which playing tracks in loops by user control.
-    * Reocred interface.
-* The project deployed in Netlify and you can find it [here](https://pedantic-easley-96a02f.netlify.app/).
+This project is part of a home task by Moveo. The project includes a Loop machine which plays track in loops by user control. It also has a record interface. The project deployed on Netlify and you can find it [here](https://pedantic-easley-96a02f.netlify.app/).
 
 # Design
 The project components:
-* App.js - The Main component which holds the whole application.
-* Header.js - The screen's head panel, conatians the project title and auther name.
-* AudioBoard - The main part of this task, it holds the 9 pads, and the play/pause controllers.
-* Pad.js - A single pad component. It conatins the pad's track and state.
-* UserRecoder.js - Manages the recording option.
+* App.js - the main component which holds the whole application.
+* Header.js - the screen's head panel, contains the project title and author's name.
+* AudioBoard - It holds the 9 pads, the play/pause controllers.
+* Pad.js - a single pad component. It contains the pad's track and state.
+* UserRecoder.js - manages the recording option.
 
 ## Synchronization Description
-* AudioBoard component has 'isPlaying' state field - which switches state, on click.
+* AudioBoard component has 'isPlaying' state field - which switches state on click.
 * Pad has isPlaying (setPadState) state field too - which switches mode by clicking on the Pad.
 * In addition, Pad has a 'PrevLoop' field. It determines if the pad is part of the active pads.
-* In case of AudioBoard in 'Play' mode and Pad in 'On' mode, the pad's audio starts playing the track.
-* At the same time, AudioBoard starts timeout which counts the loop number.
-* The main synchronization idea, based on the react hooks - useEffect - principal which renders the audio.play() by each updatee in 'loopNum' (as part of the dependency array).
-* If we click on a Pad in the middle of the loop it updates the 'PrevLoop' to be numLoop and at the next loop while we check if padloop == Numloop, the answer will be yes, and then we render audio.play() and join this Pad to all active Pads.
+* When  AudioBoard is in 'play' mode and Pad is in 'on' mode, the Pad's audio starts playing the track.
+* At the same time, AudioBoard starts a timeout which counts the loop number.
+* The main synchronization idea, based on the react hooks - useEffect - principal which renders the audio.play() by each updates in 'loopNum' (as part of the dependency array).
+* When a user clicks on a Pad in the middle of the loop it updates the 'PrevLoop' to be numLoop. Just before the next loop, Pad checks if padloop == numloop, if it is true then it renders audio.play() and joins this Pad to all active Pads.
+
 
 
 # Libraries
